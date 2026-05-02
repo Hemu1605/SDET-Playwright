@@ -1,0 +1,85 @@
+## Day 1 Topics
+
+### HTML Basics
+- Basic webpage structure
+- Heading, paragraph, input box, button
+
+### DOM Manipulation
+
+- `document.getElementById()`
+- Taking input from user
+- Clearing input field
+
+### Variables
+
+- `let`
+- `const`
+- `var`
+
+### Data Types
+
+* String
+* Number
+* Boolean
+* Object
+* Array
+
+### String Methods
+
+- `length`
+- `toUpperCase()`
+- `toLowerCase()`
+- `substring()`
+
+### Operators
+
+- Addition `+`
+- Subtraction `-`
+- Multiplication `*`
+- Division `/`
+- Modulus `%`
+
+### Comparison Operators
+
+- `>`
+- `<`
+- `==`
+- `!=`
+- `>=`
+- `<=`
+
+### Objects
+
+- Creating objects
+- Accessing object properties
+
+### Functions
+
+- Normal functions
+- Returning values
+
+### Scope
+
+- Block scope with `let`
+- Function scope with `var`
+
+### Arrays
+
+- Creating arrays
+- Accessing array elements
+
+### Loops
+
+- `for`
+- `while`
+- `forEach`
+- `map`
+
+### Conditions
+
+- `if-else`
+- `switch`
+
+### Type Checking
+
+- `typeof`

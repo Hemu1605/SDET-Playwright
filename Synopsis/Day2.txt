@@ -1,0 +1,68 @@
+# Day 2 Topics
+
+### String Concatenation
+
+```js
+"Hello " + name
+```
+
+### Template Literals
+
+```js
+`Hello ${name}`
+```
+
+### Arrow Functions
+
+```js
+(x, y) => x + y
+```
+
+### Multiplication Table Function
+
+=  Loop-based table generation
+
+### Array Methods
+
+- `filter()`
+- `map()`
+- `forEach()`
+- `find()`
+
+### Math Functions
+
+- `Math.random()`
+- `Math.floor()`
+
+### Type Conversion
+
+- `Number()`
+- `String()`
+- `parseInt()`
+- `parseFloat()`
+
+### Array Operations
+
+- `push()`
+- `pop()`
+- `shift()`
+- `unshift()`
+- `splice()`
+
+### Equality Operators
+
+- `==`
+- `===`
+
+---------------------------------------------
+
+# Important Concepts Learned
+
+* Dynamic typing
+* DOM interaction
+* ES6 features
+* Functional programming basics
+* Array manipulation
+* String manipulation
+* Random number generation
+* Modern JavaScript syntax
