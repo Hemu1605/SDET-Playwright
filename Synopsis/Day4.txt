@@ -1,0 +1,30 @@
+############ Promise in JavaScript #################
+
+A Promise in JavaScript is used to handle asynchronous operations like API calls, file loading, or database requests.
+
+Promise States:
+1. Pending   → Waiting for result
+2. Resolved  → Operation successful
+3. Rejected  → Operation failed
+
+Code Explanation:
+• getData(success) returns a Promise.
+• setTimeout() delays execution for 2 seconds.
+• If success is true, resolve() runs and returns "Data received".
+• If success is false, reject() runs and returns "Failed to fetch data".
+
+.then()
+Used to handle successful results.
+
+.catch()
+Used to handle errors or rejected promises.
+
+Example Output:
+• success = true  → Data received
+• success = false → Error: Failed to fetch data
+
+Advantages:
+• Handles asynchronous tasks easily
+• Improves readability
+• Avoids callback hell
+• Better error handling
