@@ -28,3 +28,34 @@ Advantages:
 • Improves readability
 • Avoids callback hell
 • Better error handling
+
+
+
+
+
+#########################################################
+1. Joke API
+This API fetches a random joke from the internet. The program extracts the setup and punchline of the joke and displays them in the console.
+
+2. Quotes API
+This API provides a random motivational or inspirational quote. The code extracts the quote content and author name from the response.
+
+3. University API
+This API returns a list of universities in India. The program selects the first five universities and displays their names and websites.
+
+4. Agify API
+This API predicts the age of a person based on their name. The program sends the name “Hemraj” and displays the predicted age.
+
+5. Genderize API
+This API predicts gender using a given name. The program extracts the predicted gender and probability value from the API response.
+
+6. Advice Slip API
+This API provides random advice. The code retrieves the advice ID and advice text and prints them in the console.
+
+7. CoinDesk Bitcoin API
+This API provides the current Bitcoin price. The program extracts the currency code and Bitcoin exchange rate in USD.
+
+8. Open Brewery API
+This API provides information about breweries. The program fetches brewery details, selects the first five records, and displays their names and cities.
+
+Overall, this project helps in understanding asynchronous programming, API handling, JSON data processing, array methods, and error handling in JavaScript.
