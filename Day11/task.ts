@@ -190,30 +190,7 @@
 // Question 8:  Async Higher-Order Function (HOF)
 ////////////////////////////////////////////////////////////////////////
 
-// function safeExecute<T>(asyncFn: () => Promise<T>): () => Promise<T | null> {
-//   return async function () {
-//     try {
-//       const result = await asyncFn();
-//       return result;
-//     } catch (error) {
-//       console.error("Error occurred:", error);
-//       return null;
-//     }
-//   };
-// }
 
-// // Example async function
-// async function fetchUser(): Promise<string> {
-//   return "Hemraj";
-// }
-
-// // Wrap the function
-// const safeFetchUser = safeExecute(fetchUser);
-
-// // Run it
-// safeFetchUser().then((result) => {
-//   console.log(result);
-// });
 
 
 ////////////////////////////////////////////////////////////////////////
