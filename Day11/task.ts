@@ -95,34 +95,7 @@
 ////////////////////////////////////////////////////////////////////////
 
 
-// type FolderNode = {
-//   name: string;
-//   files?: string[];
-//   subFolders?: FolderNode[];
-// };
 
-// const myFolder: FolderNode = {
-//   name: "Root",
-//   files: ["index.html", "style.css"],
-//   subFolders: [
-//     {
-//       name: "Images",
-//       files: ["logo.png", "banner.jpg"],
-//     },
-//     {
-//       name: "Scripts",
-//       files: ["app.js"],
-//       subFolders: [
-//         {
-//           name: "Utils",
-//           files: ["helper.js"],
-//         },
-//       ],
-//     },
-//   ],
-// };
-
-// console.log(myFolder);
 
 
 ////////////////////////////////////////////////////////////////////////
