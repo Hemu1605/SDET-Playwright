@@ -1,3 +1,32 @@
-######################################
-Revise previous Topics
-######################################
+#############################################################################
+DAY 3: ADVANCED ARRAY LOGIC & CHALLENGES
+#############################################################################
+
+
+1. OBJECT PROPERTY EXTRACTION
+   Concept: Using .map() to pluck specific fields from a collection of objects.
+   Example:
+   const products = [{ id: 1, title: 'Laptop' }, { id: 2, title: 'Mouse' }];
+   const titles = products.map(p => p.title); // ['Laptop', 'Mouse']
+
+2. METHOD CHAINING
+   Concept: Combining multiple array methods in a single statement for efficient 
+   data processing.
+   Example:
+   const result = nums.filter(n => n % 2 === 0).map(n => n * n);
+   // Filters evens, then squares them.
+
+3. DATA AGGREGATION & FLATTENING
+   Concept: Using .reduce() for complex logic like calculating averages or 
+   flattening nested arrays.
+   Example:
+   const nested = [[1, 2], [3, 4]];
+   const flat = nested.reduce((acc, curr) => acc.concat(curr), []); 
+   // Result: [1, 2, 3, 4]
+
+#############################################################################
+KEY TAKEAWAYS (DAY 3)
+#############################################################################
+- Chaining methods (.filter().map()) is powerful for processing complex data.
+- Always provide an initial value (like 0 or []) when using .reduce().
+- Extracting specific fields from API-like objects simplifies the final data view.

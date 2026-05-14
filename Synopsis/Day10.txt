@@ -1,0 +1,28 @@
+#############################################################################
+DAY 10: ADVANCED TYPESCRIPT & BACKEND BASICS (EXPRESS)
+#############################################################################
+
+1. ADVANCED UTILITY TYPES
+   - Partial<T>: Makes all properties of an object optional.
+   - Readonly<T>: Prevents any modification to object properties after creation.
+   - Omit<T, K>: Creates a new type by removing specific keys from an existing type.
+   - DeepPartial<T>: A custom recursive type for handling nested optional properties.
+
+2. TYPE SAFETY & NARROWING
+   - Enums & Intersections: Defining fixed categories and merging multiple types.
+   - Type Guarding: Using 'typeof', 'in', and custom Type Predicates ('is') to 
+     safely narrow union types.
+   - Keyof & Typeof: Extracting keys from objects and creating types from values.
+
+3. BACKEND DEVELOPMENT WITH EXPRESS.JS
+   - Setup: Initializing a Node project and installing the 'express' library.
+   - Routing: Creating basic GET endpoints with static and dynamic parameters.
+   - JSON Responses: Sending structured data back to the client.
+
+#############################################################################
+KEY TAKEAWAYS (DAY 10)
+#############################################################################
+- Utility types like Omit and Partial allow for high code reusability.
+- Type Guards prevent runtime errors when working with flexible Union types.
+- Express.js is the industry standard for building fast, minimalist Node.js APIs.
+- Immutability (Readonly) is a core pattern for predictable state management.

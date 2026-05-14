@@ -1,72 +1,46 @@
-JavaScript Object-Oriented Programming (OOP) Concepts 
 
-1. Class and Object
-A class is a blueprint for creating objects. Objects are instances of a class that contain properties and methods.
 
-Example:
-The Animal class contains a name property and a speak() method. Objects like dog and cat are created using this class.
+#############################################################################
+DAY 5: OOP, ADVANCED JS & ASYNC/AWAIT
+#############################################################################
 
---------------------------------------------
 
-2. Encapsulation
-Encapsulation means hiding data inside a class and controlling access using methods.
+1. OBJECT-ORIENTED PROGRAMMING (OOP)
+   Concept: Organizing code into reusable classes and objects.
+   - Encapsulation: Using '#' for private variables (e.g., #balance) to protect data.
+   - Inheritance: Using 'extends' and 'super()' to share logic between classes.
+   - Polymorphism: Overriding parent methods in child classes (e.g., draw() in Square).
+   - Abstraction: Hiding complex internal details behind simple methods (e.g., brew()).
 
-Example:
-The BankAccount and Student classes use private variables (#balance and #marks). These variables cannot be accessed directly outside the class. Methods like deposit(), withdraw(), setMarks(), and getMarks() are used to access or modify the data safely.
+2. ADVANCED JS CONCEPTS
+   - Getters/Setters: Controlling how data is accessed and validated.
+   - Static Methods: Methods called directly on the Class, not the instance.
+   - Method Chaining: Returning 'this' from methods to allow '.add().multiply()'.
+   - Object.freeze(): Making an object completely read-only.
+   - Destructuring: Cleanly extracting properties: const { name, age } = user.
 
-Advantages:
-- Protects data from direct modification
-- Improves security
-- Makes code more organized
+3. REFACTORING TO ASYNC/AWAIT
+   Concept: Making asynchronous code look and behave like synchronous code.
+   - try/catch: Modern way to handle errors in async functions.
+   - await: Pauses execution until the promise is resolved.
+   Example:
+   async function fetchData() {
+       try {
+           const res = await fetch(url);
+           const data = await res.json();
+           console.log(data);
+       } catch (err) {
+           console.error(err);
+       }
+   }
 
---------------------------------------------
+#############################################################################
+KEY TAKEAWAYS (DAY 5)
+#############################################################################
 
-3. Abstraction
-Abstraction means hiding internal implementation details and showing only important functionality to the user.
+- Use '#' for truly private class properties (Encapsulation).
+- async/await is much cleaner and easier to debug than .then() chains.
+- Destructuring simplifies working with complex API response objects.
+- Method chaining (returning 'this') creates very readable utility classes.
+- Object.freeze() is useful for configuration objects that shouldn't change.
 
-Example:
-The CoffeeMachine and Car classes hide internal methods like #boilWater(), #grindBeans(), and #startEngine(). Users only interact with public methods like brew() and drive().
-
-Advantages:
-- Reduces complexity
-- Makes code easier to use
-- Improves maintainability
-
---------------------------------------------
-
-4. Inheritance
-Inheritance allows one class to acquire properties and methods from another class using the extends keyword.
-
-Example:
-The Admin class inherits from the User class.
-The Dog class inherits from the Animal class.
-
-Advantages:
-- Code reusability
-- Reduces duplicate code
-- Creates parent-child relationships
-
---------------------------------------------
-
-5. Polymorphism
-Polymorphism means one method can perform different actions depending on the object.
-
-Example:
-The draw() method behaves differently in Circle and Square classes.
-The sound() method behaves differently in Dog, Cat, and Cow classes.
-
-Advantages:
-- Flexibility
-- Easy method overriding
-- Better scalability
-
---------------------------------------------
-
-Conclusion
-Object-Oriented Programming in JavaScript helps developers write clean, reusable, secure, and organized code. The main OOP concepts are:
-- Encapsulation
-- Abstraction
-- Inheritance
-- Polymorphism
-
-These concepts improve code readability, maintenance, and reusability in real-world applications.
