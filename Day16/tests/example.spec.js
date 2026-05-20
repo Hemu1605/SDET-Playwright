@@ -7,7 +7,7 @@ test.describe('testing index.html', async () => {
   // });
 
   test.beforeEach(async ({ page }) =>
-    await page.goto('http://localhost:5500/Day13/webapp/public/index.html')
+    await page.goto('http://localhost:3000/Day13/webapp/public/index.html')
   );
 
   test('handle alert', async ({ page }) => {
