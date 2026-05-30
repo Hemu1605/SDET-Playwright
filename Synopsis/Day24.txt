@@ -1,0 +1,44 @@
+###################################################################################
+DAY 24: AI-DRIVEN TEST AUTOMATION WITH ZEROSTEP & PLAYWRIGHT
+###################################################################################
+
+1. ZEROSTEP AI INTEGRATION
+   - Concept: Leverages LLM-based autonomous agent execution to interact with web elements using plain-English prompts ('ai()') instead of volatile CSS/XPath locators.
+   - Package: '@zerostep/playwright'
+   - Syntax:
+     ```javascript
+     const { ai } = require('@zerostep/playwright');
+     await ai('prompt instruction', { page, test });
+     ```
+
+2. ENVIRONMENT CONFIGURATION & SECURITY
+   - Concept: Safely injecting runtime credentials into test execution via environmental variables, strictly excluding secrets from Git tracking.
+   - Package: 'dotenv'
+   - Setup:
+     - Create a '.env' file in the project root:
+       'ZEROSTEP_TOKEN=your_zerostep_api_key'
+     - Load in your test file:
+       'require('dotenv').config();'
+
+3. AI AUTOMATION EXAMPLES
+   - Search Engine Workflow:
+     ```javascript
+     test('zerostep test', async ({ page }) => {
+         await page.goto('https://www.google.com');
+         await ai('search for playwright automation', { page, test });
+     });
+     ```
+   - Complex E-commerce/Brand Site Navigation:
+     ```javascript
+     test('Execute Rockstar Games workflow', async ({ page }) => {
+         await page.goto('https://www.rockstargames.com/');
+         await ai('click on Downloads', { page, test });
+     });
+     ```
+
+###################################################################################
+KEY TAKEAWAYS (DAY 24)
+###################################################################################
+- Zerostep bypasses traditional flaky locators by interpreting intent through natural language.
+- Dotenv integration allows secure storage and loading of the critical ZEROSTEP_TOKEN.
+- AI-driven automation excels at adapting to dynamic UI updates, creating self-healing test scripts.

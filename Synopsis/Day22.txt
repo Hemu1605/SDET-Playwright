@@ -1,0 +1,126 @@
+##################################################################################
+## DAY 22: PLAYWRIGHT TEST AUTOMATION USING GITHUB ACTIONS (CI/CD)
+##################################################################################
+
+1. GITHUB ACTIONS WORKFLOW CONFIGURATION
+
+   * Concept: Automates Playwright test execution whenever code is pushed or a Pull Request is created.
+   * Workflow Name:
+
+     ```yaml
+     name: Playwright Tests
+     ```
+   * Triggers:
+
+     ```yaml
+     on:
+       push:
+         branches: [ main, master ]
+       pull_request:
+         branches: [ main, master ]
+     ```
+   * Purpose:
+
+     * Automatically validates application quality on every code update.
+     * Ensures continuous testing without manual execution.
+
+2. GITHUB HOSTED RUNNER SETUP
+
+   * Concept: Uses a cloud-based Ubuntu machine provided by GitHub to execute Playwright tests.
+   * Configuration:
+
+     ```yaml
+     runs-on: ubuntu-latest
+     timeout-minutes: 60
+     ```
+   * Benefits:
+
+     * No local machine dependency.
+     * Consistent execution environment for all team members.
+
+3. PROJECT CHECKOUT & NODE.JS SETUP
+
+   * Repository Checkout:
+
+     ```yaml
+     - uses: actions/checkout@v4
+     ```
+   * Node.js Installation:
+
+     ```yaml
+     - uses: actions/setup-node@v4
+       with:
+         node-version: lts/*
+     ```
+   * Purpose:
+
+     * Downloads project source code.
+     * Installs the latest stable Node.js version required for Playwright.
+
+4. DEPENDENCY INSTALLATION
+
+   * Command:
+
+     ```yaml
+     - name: Install dependencies
+       run: npm ci
+     ```
+   * Purpose:
+
+     * Installs all project packages from package-lock.json.
+     * Ensures reproducible and consistent builds.
+
+5. PLAYWRIGHT BROWSER INSTALLATION
+
+   * Command:
+
+     ```yaml
+     - name: Install Playwright Browsers
+       run: npx playwright install --with-deps
+     ```
+   * Purpose:
+
+     * Downloads Chromium, Firefox, and WebKit browsers.
+     * Installs required system dependencies.
+
+6. AUTOMATED TEST EXECUTION
+
+   * Command:
+
+     ```yaml
+     - name: Run Playwright tests
+       run: npx playwright test
+     ```
+   * Purpose:
+
+     * Executes all Playwright test cases automatically.
+     * Generates test results and reports.
+
+7. TEST REPORT ARTIFACT UPLOAD
+
+   * Configuration:
+
+     ```yaml
+     - uses: actions/upload-artifact@v4
+       if: ${{ !cancelled() }}
+       with:
+         name: playwright-report
+         path: playwright-report/
+         retention-days: 30
+     ```
+   * Purpose:
+
+     * Uploads Playwright HTML reports as GitHub artifacts.
+     * Stores reports for 30 days for future analysis and debugging.
+
+##################################################################################
+## KEY TAKEAWAYS (DAY 22)
+##################################################################################
+
+* GitHub Actions enables fully automated Playwright test execution in the cloud.
+* Workflow triggers automatically on Push and Pull Request events.
+* Ubuntu runners provide a consistent environment for all test executions.
+* npm ci ensures reliable dependency installation across builds.
+* Playwright browsers and dependencies are installed automatically before test execution.
+* Test reports are preserved as downloadable artifacts for 30 days.
+* CI/CD integration improves software quality by detecting failures early in the development lifecycle.

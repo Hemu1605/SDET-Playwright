@@ -1,0 +1,42 @@
+################################################################################
+DAY 17: AUTH STATE SHARING & ADVANCED ASSERTIONS
+################################################################################
+
+1. AUTHENTICATION STATE SHARING (Save & reuse logins)
+   - Concept: Avoid logging in repeatedly for every test case, which slows down 
+     suites and causes throttle issues.
+   - Step 1 (Save): Run the login flow once and save the context cookies and local 
+     storage state to a JSON file:
+     ```javascript
+     await page.context().storageState({ path: 'playwright/.auth/user.json' });
+     ```
+   - Step 2 (Reuse): Feed the saved state file into your test block:
+     ```javascript
+     test.use({ storageState: 'playwright/.auth/user.json' });
+     ```
+   - Configuration: Use 'test.describe.configure({ mode: "serial" })' to run state-saving 
+     and state-consuming tests sequentially.
+
+2. DYNAMIC PARAMETERIZED TESTING
+   - Using standard 'for...of' loops to iterate over data arrays, dynamically generating 
+     named tests using template literals (`search for ${item.searchTerm}`).
+
+3. SOFT ASSERTIONS (Non-blocking checks)
+   - Syntax: 'await expect.soft(locator).toHaveText(...)'
+   - Benefit: If a soft assertion fails, the test continues executing subsequent lines and 
+     assertions, but still marks the overall test as failed at the end. Excellent for multi-element page audits.
+
+4. POLLING ASSERTIONS (Waiting for conditions)
+   - Syntax: 'await expect.poll(callback, options).toBe(value)'
+   - Benefit: Playwright repeatedly runs the callback until the returned value matches 
+     the expectation. Extremely powerful for waiting on asynchronous counters, database syncs, 
+     or animations.
+
+################################################################################
+KEY TAKEAWAYS (DAY 17)
+################################################################################
+- Sharing storageState cuts execution times significantly by bypassing repetitive logins.
+- Use 'expect.soft()' when validating multiple static elements on a dashboard so one minor 
+  cosmetic bug doesn't block the rest of your functional checks.
+- Use 'expect.poll()' with customizable timeouts and messages to handle unstable async 
+  conditions cleanly without resorting to static 'page.waitForTimeout()' sleeps.

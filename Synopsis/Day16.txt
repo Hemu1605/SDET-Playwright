@@ -1,0 +1,32 @@
+################################################################################DAY 16: HOOKS, DIALOGS & ADVANCED FORM TESTING
+################################################################################
+
+1. PLAYWRIGHT HOOKS (Setup and teardown)
+   - test.beforeAll(): Runs once before any test inside a describe block executes.
+   - test.beforeEach(): Runs before every single test case (perfect for loading a URL).
+   - test.afterEach(): Runs immediately after each test case completes.
+   - test.afterAll(): Runs once after all tests in the describe block finish.
+
+2. EVENT-DRIVEN DIALOG HANDLING (Alerts, Confirms, Prompts)
+   - Concept: Dialogs in Playwright are auto-dismissed by default. To interact with 
+     them, you must register a listener before the triggering action occurs.
+   - Implementation:
+     ```javascript
+     page.on('dialog', dialog => {
+       expect(dialog.message()).toBe('Expected Alert Message');
+       dialog.accept(); // Clicks OK
+     });
+     ```
+
+3. ROBUST LOGIN FORM DDT
+   - Combining loops with assertions to test input lengths, invalid credentials, and 
+     positive success validation on real local web forms.
+
+################################################################################
+KEY TAKEAWAYS (DAY 16)
+################################################################################
+- 'beforeEach' is the best place to handle navigation, keeping individual tests dry 
+  and focused purely on the actions being verified.
+- Because dialog handling is asynchronous, 'page.on("dialog")' must be configured 
+  *before* you click the button that triggers the dialog.
+- Accept or dismiss dialogs dynamically using 'dialog.accept()' or 'dialog.dismiss()'.

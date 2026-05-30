@@ -1,0 +1,44 @@
+#######################################################################      
+DAY 19: PAGE OBJECT MODEL (POM) & CUSTOM FIXTURES
+#######################################################################      
+
+1. PAGE OBJECT MODEL (POM)
+   - Concept: Design pattern to create an object repository for web UI elements.
+   - Benefit: Reduces code duplication, makes test maintenance easier, and improves readability.
+   - Example:
+     ```javascript
+     class LoginPage {
+       constructor(page) {
+         this.page = page;
+         this.usernameInput = page.locator('#username');
+         this.passwordInput = page.locator('#password');
+         this.submitBtn = page.locator('button[type="submit"]');
+       }
+       async navigate() { await this.page.goto('/login'); }
+       async fillForm(user, pass) {
+         await this.usernameInput.fill(user);
+         await this.passwordInput.fill(pass);
+       }
+       async submit() { await this.submitBtn.click(); }
+     }
+     ```
+
+2. CUSTOM FIXTURES EXTENSION (base.extend)
+   - Concept: Extending the base Playwright test runner to create custom reusable fixtures.
+   - Example:
+     ```javascript
+     const { test: base, expect } = require('@playwright/test');
+     const test = base.extend({
+       preparedPage: async ({ page }, use) => {
+         await page.goto('http://localhost:3000'); // navigate once
+         await use(page); // pass pre-navigated page to the test
+       }
+     });
+     ```
+   - Benefit: Eliminates repetitive navigation/setup blocks in test files, resulting in dry and concise test code.
+
+#######################################################################      
+KEY TAKEAWAYS (DAY 19)
+#######################################################################      
+- POM decouples the UI element selectors and action methods from the test logic.
+- Custom fixtures enable powerful dependency injection and setup/teardown encapsulation.

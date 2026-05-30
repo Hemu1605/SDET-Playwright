@@ -1,0 +1,30 @@
+################################################################################
+DAY 15: ANNOTATIONS, TIMEOUTS & COLLAPSIBLE STEPS
+################################################################################
+
+1. TEST ANNOTATIONS (Controlling test behavior)
+   - test.skip(): Completely skips the execution of a test case.
+   - test.fail(): Declares that the test is expected to fail. Playwright will throw 
+     an error if the test accidentally passes!
+   - test.fixme(): Skips the test and marks it as broken, signaling that it needs 
+     maintenance/fixing later.
+   - test.slow(): Triples the default timeout for the current test case.
+
+2. TIMEOUT MANAGEMENT
+   - Overriding timeouts: Use 'test.setTimeout(ms)' (e.g., test.setTimeout(10000)) 
+     to specify an exact timeout limit for a specific flaky or long-running test.
+
+3. COLLAPSIBLE REPORTING (test.step)
+   - Concept: Grouping actions inside 'test.step("Step Name", async () => { ... })' 
+     to structure the execution flow.
+   - Benefit: Splits complex tests into logical, named phases that display as beautiful, 
+     collapsible steps in Playwright HTML and Allure reports.
+
+################################################################################
+KEY TAKEAWAYS (DAY 15)
+################################################################################
+- Annotations like 'skip' and 'fixme' prevent broken features from failing CI pipelines.
+- 'test.fail()' is extremely useful for verifying that an expected error or validation 
+  reproduces consistently.
+- Always group long, multi-stage end-to-end tests into 'test.step' blocks for cleaner 
+  reports and faster debugging of failed steps.
